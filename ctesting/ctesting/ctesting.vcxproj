@@ -104,12 +104,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>Default</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\Misc Stuff\ctesting\SDL2_image-2.6.3\x86_64-w64-mingw32\include\SDL2;F:\Misc Stuff\ctesting\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Repositories\cgame\ctesting\SDL2_image-2.6.3\x86_64-w64-mingw32\include\SDL2;F:\Repositories\cgame\ctesting\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>F:\Misc Stuff\ctesting\SDL2_image-2.6.3\x86_64-w64-mingw32\lib;F:\Misc Stuff\ctesting\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>F:\Repositories\cgame\ctesting\SDL2_image-2.6.3\x86_64-w64-mingw32\lib;F:\Repositories\cgame\ctesting\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;libSDL2_image.dll.a;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -121,19 +121,20 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>Default</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\Misc Stuff\ctesting\SDL2_image-2.6.3\x86_64-w64-mingw32\include\SDL2;F:\Misc Stuff\ctesting\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Repositories\cgame\ctesting\SDL2_image-2.6.3\x86_64-w64-mingw32\include\SDL2;F:\Repositories\cgame\ctesting\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>F:\Misc Stuff\ctesting\SDL2_image-2.6.3\x86_64-w64-mingw32\lib;F:\Misc Stuff\ctesting\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>F:\Repositories\cgame\ctesting\SDL2_image-2.6.3\x86_64-w64-mingw32\lib;F:\Repositories\cgame\ctesting\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;libSDL2_image.dll.a;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ctesting.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

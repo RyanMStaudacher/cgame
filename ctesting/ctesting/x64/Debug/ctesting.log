@@ -1,2 +1,5 @@
 ﻿  main.cpp
+F:\Repositories\cgame\ctesting\ctesting\main.cpp(55,44): warning C4018: '<': signed/unsigned mismatch
+F:\Repositories\cgame\ctesting\ctesting\main.cpp(78,23): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+F:\Repositories\cgame\ctesting\ctesting\main.cpp(82,23): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
   ctesting.vcxproj -> F:\Repositories\cgame\ctesting\x64\Debug\ctesting.exe

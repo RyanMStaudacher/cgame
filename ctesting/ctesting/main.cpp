@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <SDL.h>
 
+void ProcessEvents(SDL_Window* window, SDL_Renderer* renderer, SDL_Rect* gremlinRect);
+SDL_Rect InitRect(int xPos, int yPos, int width, int height);
+
+int FPS = 60;
+int FrameStartTimeMS = 0;
+
+float spriteDstY = 0.0f;
+float spriteDstX = 0.0f;
+
 
 int main(int argc, char* argv[])
 {
@@ -24,22 +33,26 @@ int main(int argc, char* argv[])
 	SDL_FreeSurface(gremlinSurface);
 	
 	int done = 0;
+	SDL_Rect gremlinRect = InitRect(0,0,200,200);
 
 	while (!done)
 	{
 		SDL_RenderClear(renderer);
 
-		SDL_Rect gremlinRect;
-		gremlinRect.x = 0;
+		/*gremlinRect.x = 0;
 		gremlinRect.y = 0;
-		gremlinRect.w = 200;
-		gremlinRect.h = 200;
+		gremlinRect.w = 100;
+		gremlinRect.h = 100;*/
+
+		ProcessEvents(window, renderer, &gremlinRect);
 
 		SDL_RenderFillRect(renderer, &gremlinRect);
 
 		SDL_RenderCopy(renderer, gremlinTexture, NULL, &gremlinRect);
 
 		SDL_RenderPresent(renderer);
+
+		while (SDL_GetTicks() - FrameStartTimeMS < 1000 / FPS);
 	}
 
 	SDL_DestroyTexture(gremlinTexture);
@@ -48,4 +61,36 @@ int main(int argc, char* argv[])
 
 	getchar();
 	return 0;
+}
+
+void ProcessEvents(SDL_Window* window, SDL_Renderer* renderer, SDL_Rect* gremlinRect)
+{
+	SDL_Event event;
+	float gSpeed = 5.0f;
+	FrameStartTimeMS = SDL_GetTicks();
+
+	while (SDL_PollEvent(&event))
+	{
+		if (SDL_KEYDOWN)
+		{
+			if (event.key.keysym.sym == SDLK_LEFT)
+			{
+				gremlinRect->x -= gSpeed;
+			}
+			else if (event.key.keysym.sym == SDLK_RIGHT)
+			{
+				gremlinRect->x += gSpeed;
+			}
+		}
+	}
+}
+
+SDL_Rect InitRect(int xPos, int yPos, int width, int height)
+{
+	SDL_Rect iRect;
+	iRect.x = 0;
+	iRect.y = 0;
+	iRect.w = 200;
+	iRect.h = 200;
+	return iRect;
 }
